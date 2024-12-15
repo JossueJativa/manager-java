@@ -14,7 +14,7 @@ public class CustomerManager {
     // Adds an order to the list
     public void addOrder(String o) {
         orderList.add(o);
-        System.out.println("Order added: " + o);
+        System.out.println("Order added: " + o)
     }
 
     // Processes all orders for a specific customer
