@@ -2,39 +2,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerManager {
-    public List<String> clientList = new ArrayList<>();
-    public List<String> orderList = new ArrayList<>();
+    public List<String> cList = new ArrayList<>();
+    public List<String> oList = new ArrayList<>();
 
     // Adds a customer to the list
-    public void addCustomer(String n) {
-        clientList.add(n);
+    public void aC(String n) {
+        cList.add(n);
         System.out.println("Added customer: " + n);
     }
 
     // Adds an order to the list
-    public void addOrder(String o) {
-        orderList.add(o);
+    public void aO(String o) {
+        oList.add(o);
         System.out.println("Order added: " + o);
     }
 
     // Processes all orders for a specific customer
-    public void processOrderByCustomer(String c) {
+    public void pO(String c) {
         System.out.println("Processing orders for: " + c);
-        iterationMethod(orderList, "Processing order");
+        for (int i = 0; i < oList.size(); i++) {
+            System.out.println("Processing order: " + oList.get(i));
+        }
     }
 
     // Generates a summary report for customers and orders
-    public void generateSummaryReport() {
+    public void gR() {
         System.out.println("Customer Report");
-        iterationMethod(clientList, "Customer");
+        for (int i = 0; i < cList.size(); i++) {
+            System.out.println("Customer: " + cList.get(i));
+        }
         System.out.println("Order Report");
-        iterationMethod(orderList, "Order");
-    }
-
-    // Iterates through a list and prints a message
-    private void iterationMethod(List<String> list, String message) {
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(message + ": " + list.get(i));
+        for (int i = 0; i < oList.size(); i++) {
+            System.out.println("Order: " + oList.get(i));
         }
     }
 }
