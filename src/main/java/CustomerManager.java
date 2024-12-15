@@ -20,20 +20,21 @@ public class CustomerManager {
     // Processes all orders for a specific customer
     public void processOrderByCustomer(String c) {
         System.out.println("Processing orders for: " + c);
-        for (int i = 0; i < orderList.size(); i++) {
-            System.out.println("Processing order: " + orderList.get(i));
-        }
+        iterationMethod(orderList, "Processing order");
     }
 
     // Generates a summary report for customers and orders
     public void generateSummaryReport() {
         System.out.println("Customer Report");
-        for (int i = 0; i < clientList.size(); i++) {
-            System.out.println("Customer: " + clientList.get(i));
-        }
+        iterationMethod(clientList, "Customer");
         System.out.println("Order Report");
-        for (int i = 0; i < orderList.size(); i++) {
-            System.out.println("Order: " + orderList.get(i));
+        iterationMethod(orderList, "Order");
+    }
+
+    // Iterates through a list and prints a message
+    private void iterationMethod(List<String> list, String message) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(message + ": " + list.get(i));
         }
     }
 }
