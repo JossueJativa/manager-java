@@ -2,38 +2,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerManager {
-    public List<String> cList = new ArrayList<>();
-    public List<String> oList = new ArrayList<>();
+    private List<String> clientList = new ArrayList<>();
+    private List<String> orderList = new ArrayList<>();
 
     // Adds a customer to the list
-    public void aC(String n) {
-        cList.add(n);
+    public void addCustomer(String n) {
+        clientList.add(n);
         System.out.println("Added customer: " + n);
     }
 
     // Adds an order to the list
-    public void aO(String o) {
-        oList.add(o);
+    public void addOrder(String o) {
+        orderList.add(o);
         System.out.println("Order added: " + o);
     }
 
     // Processes all orders for a specific customer
-    public void pO(String c) {
+    public void processOrderByCustomer(String c) {
         System.out.println("Processing orders for: " + c);
-        for (int i = 0; i < oList.size(); i++) {
-            System.out.println("Processing order: " + oList.get(i));
-        }
+        iterationMethod(orderList, "Processing order");
     }
 
     // Generates a summary report for customers and orders
-    public void gR() {
+    public void generateSummaryReport() {
         System.out.println("Customer Report");
-        for (int i = 0; i < cList.size(); i++) {
-            System.out.println("Customer: " + cList.get(i));
-        }
+        iterationMethod(clientList, "Customer");
         System.out.println("Order Report");
-        for (int i = 0; i < oList.size(); i++) {
-            System.out.println("Order: " + oList.get(i));
+        iterationMethod(orderList, "Order");
+    }
+
+    // Iterates through a list and prints a message
+    private void iterationMethod(List<String> list, String message) {
+        for (String item : list) {
+            System.out.println(message + ": " + item);
         }
     }
 }
