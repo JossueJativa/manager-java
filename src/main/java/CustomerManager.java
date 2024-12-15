@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerManager {
+    public List<String> clientList = new ArrayList<>();
+    public List<String> orderList = new ArrayList<>();
+
+    // Adds a customer to the list
+    public void addCustomer(String n) {
+        clientList.add(n);
+        System.out.println("Added customer: " + n);
+    }
+
+    // Adds an order to the list
+    public void addOrder(String o) {
+        orderList.add(o);
+        System.out.println("Order added: " + o);
+    }
+
+    // Processes all orders for a specific customer
+    public void processOrderByCustomer(String c) {
+        System.out.println("Processing orders for: " + c);
+        for (int i = 0; i < orderList.size(); i++) {
+            System.out.println("Processing order: " + orderList.get(i));
+        }
+    }
+
+    // Generates a summary report for customers and orders
+    public void generateSummaryReport() {
+        System.out.println("Customer Report");
+        for (int i = 0; i < clientList.size(); i++) {
+            System.out.println("Customer: " + clientList.get(i));
+        }
+        System.out.println("Order Report");
+        for (int i = 0; i < orderList.size(); i++) {
+            System.out.println("Order: " + orderList.get(i));
+        }
+    }
+}
